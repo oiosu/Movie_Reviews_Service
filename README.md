@@ -9,12 +9,12 @@
 
    #### 1-1. 앱 등록 (settings.py)
 
-      ```python
-      INSTALLED_APPS = [
-          'movie',
-          # ...
-      ]
-      ```
+```python
+INSTALLED_APPS = [
+    'movie',
+    # ...
+]
+```
 
 ### 2. 모델 생성 (models.py)
 
@@ -35,46 +35,46 @@
 
    #### 3-1. project 메인 urls.py에 include
 
-      ```python
-      from django.contrib import admin
-      from django.urls import path, include
-      
-      urlpatterns = [
-          path("admin/", admin.site.urls),
-          path("", include("movie.urls")),
-      ]
-      ```
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("movie.urls")),
+]
+```
 
    #### 3-2. app 별 urls.py
 
-      ```python
-      from django.urls import path
-      from . import views
-      
-      app_name = "movie"
-      
-      urlpatterns = [
-          # ...
-      ]
-      ```
+```python
+from django.urls import path
+from . import views
+
+app_name = "movie"
+
+urlpatterns = [
+    # ...
+]
+```
 
 ### 4. 주문서 작성 (urls.py)
 
    #### 4-1. `html` 파일은 `urls.py`를 불러온다
 
-      ##### 1. ```html
-         <a href="{% url 'movie:new '%}">리뷰 작성</a>
-         <!-- {% url '[app_name]:[urls.py의 path name] '%} -->
-         ```
+```html
+<a href="{% url 'movie:new '%}">리뷰 작성</a>
+<!-- {% url '[app_name]:[urls.py의 path name] '%} -->
+```
 
    #### 4-2. `urls.py`에서 `views.py`를 불러온다
 
-      ##### 1. ```python
-         urlpatterns = [
-         	path("new/", views.new, name="new"),
-         ]
-         # path("new/", views.[views.py의 함수명], name="new"),
-         ```
+```python
+urlpatterns = [
+    path("new/", views.new, name="new"),
+]
+# path("new/", views.[views.py의 함수명], name="new"),
+```
 
    #### 4-3. `views.py`에서 해당 함수는 return 값으로 `html 파일` 혹은 `url`을 불러온다
 
