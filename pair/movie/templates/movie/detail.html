@@ -1,21 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block  title %}
+  <title>Document</title>
+{% endblock %}
+
+{% block content %}
 
 <body>
-    <h1>{{ review.title }}</h1>
+    <!-- As a link -->
+<p class="m-4 fw-bolder fs-2 text-light">Title</p>
+<nav class="m-4 navbar bg-dark">
+    <div class="container-fluid">
+        <h3 class="text-light">{{ review.title }}</h3>
+    </div>
+  </nav>
+  
+  <!-- As a heading -->
+  <p class="m-4 fw-bolder fs-2 text-light">Content</p>
+  <nav class="m-4 navbar bg-dark">
+    <div class="container-fluid">
+        <p class="text-light">{{ review.content }}</p>
+    </div>
+  </nav>
+
+  <p class="m-4 fs-5 text-light" >{{ review.created_at }}</p>
+
+
+  <button type="button" class="m-4 btn btn-primary">
+    <a class="text-light" href="{% url 'movie:edit' review.pk %}">Correction</a>
+  </button>
+  <button type="button" class="btn btn-primary">
+    <a class="text-light" href="{% url 'movie:delete' review.pk %}">Delete</a>
+  </button>
+
+
+    <!-- <h1>{{ review.title }}</h1>
     <p>{{ review.content }}</p>
-    <p>{{ review.created_at }}</p>
-    <p>
+    <p>{{ review.created_at }}</p> -->
+
+    <!-- <p>
         <a href="{% url 'movie:edit' review.pk %}">수정</a>
         <a href="{% url 'movie:delete' review.pk %}">삭제</a>
-    </p>
+    </p> -->
 </body>
 
-</html>
+{% endblock %}
+
+
+

@@ -1,18 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% block  title %}
   <title>Document</title>
-</head>
+{% endblock %}
 
-<body>
-  <h1>movie</h1>
-  <a href="{% url 'movie:new' %}">리뷰 작성</a>
+{% block content %}
 
-  <table>
+  <!-- banner -->
+  <div class="bg-black row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="align-content-center card bg-black">
+        <p align="middle">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DpB2IYoGDgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <div class="card-body">
+          <h5 class="fw-bolder text-center text-light card-title">20th century girl</h5>
+          <!-- card content -->
+          <p class="text-center text-light card-text">A 17-year-old girl, Bora, falls in love with her best friend Yeondu.
+            A first love observation romance<br> that takes place as a cupid of love to make it come true.</p>
+            <!-- button -->
+            <div class="justify-content-center d-flex">
+              <button type="button" class="btn btn-primary position-relative">
+                Will you choose this movie?
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  99+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button>
+            
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="align-content-center card bg-black">
+        <p align="middle">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/MYPotDkwXfE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <div class="card-body">
+          <h5 class="fw-bolder text-center text-light card-title">Enola Holmes 2</h5>
+          <p class="text-center text-light card-text">It is a mystery film slated for release in 2022. Directed by Harry Bradbeer, <br>it is the sequel to the 2020 film Enola Holmes.</p>
+          <!-- button -->
+          <div class="justify-content-center d-flex">
+            <button type="button" class="btn btn-primary position-relative">
+              Will you choose this movie?
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                99+
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="align-content-center card bg-black">
+        <p align="middle">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DovtsQyZHYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <div class="card-body">
+          <h5 class="fw-bolder text-center text-light card-title">Glass Onion: A Knives Out Mystery</h5>
+          <p class="text-center text-light card-text">It is an American mystery film. Directed and written by Rian Johnson, <br> it is the sequel to the 2019 film Knives Out.</p>
+          <!-- button -->
+          <div class="justify-content-center d-flex">
+            <button type="button" class="btn btn-primary position-relative">
+              Will you choose this movie?
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                99+
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="align-content-center card bg-black">
+        <p align="middle">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/TOTswK8Km74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <div class="card-body">
+          <h5 class="fw-bolder text-center text-light card-title">My name</h5>
+          <p class="text-center text-light card-text">A work about the breathtaking revenge drama of Yoon Ji-woo, who infiltrated<br>the police as an undercover of the organization to uncover the secret behind his father's death.</p>
+          <!-- button -->
+          <div class="justify-content-center d-flex">
+            <button type="button" class="btn btn-primary position-relative">
+              Will you choose this movie?
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                99+
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="bg-black"></span>
+
+  
+<div class="p-5 bg-black">
+  <nav class="navbar bg-black">
+    <a href="{% url 'movie:new' %}" class="p-3 m-3 btn btn-outline-light">Write a review</a>
+    <a href="#" class="p-3 m-3 btn btn-outline-light">Movie List</a>
+    <a href="#" class="p-3 m-3  btn btn-outline-light">Review</a>
+    <button class="p-3 m-3  btn btn-outline-light" type="submit">Button</button>
+    <input class="p-3 m-3 btn btn-outline-light" type="button" value="Input">
+  </nav>
+</div>
+
+
+
+<!-- table -->
+<div class="bg-black table">
+  <table class="text-center m-5 p-5 text-light table table-black table-hover">
     <thead>
       <tr>
         <td>리뷰 번호</td>
@@ -24,12 +128,19 @@
       {% for review in reviews %}
       <tr>
         <td>{{ review.pk }}</td>
-        <td><a href="{% url 'movie:detail' review.pk %}">{{ review.title }}</a></td>
+        <td><a class="text-decoration-none " href="{% url 'movie:detail' review.pk %}" >{{ review.title }}</a></td>
         <td>{{ review.created_at }}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-</body>
+</div>
 
-</html>
+<span class="bg-black"></span>
+
+
+
+{% endblock %}
+
+
+

@@ -1,16 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends 'base.html' %}
+
+{% block  title %}
+  <title>Document</title>
+{% endblock %}
+
+{% block content %}
+
+
+
 <body>
-    <form action="{% url 'movie:create' %}">
+    <div>
+        <form action="{% url 'movie:create' %}">
+            <div class="m-5">
+                <label for="exampleFormControlInput1" class="fs-3 fw-bolder text-light form-label">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영화 제목을 적어주세요" name="title">
+            </div>
+            <div class="m-5">
+                <label for="exampleFormControlTextarea1" class="fs-3 fw-bolde text-light form-label">Contents</label>
+                <input type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="재미있게 보셨나요?" rows="3" name="content"></input>
+                <input type="submit" class=" mt-4 btn btn-primary">
+                
+            </div>
+        </form>
+    </div>
+
+    <div class="m-5 card bg-black text-light">
+        <h5 class="card-header fw-bold">🤔 Is it difficult to write a review?</h5>
+        <div class="card-body">
+          <h5 class="card-title">Meet the special review</h5>
+          <p class="card-text">Please do not copy without permission.</p>
+          <a href="#" class="btn btn-primary">Want to see other articles?</a>
+        </div>
+      </div>
+
+    <div class="m-5 row">
+    <div class="col-sm-6">
+        <div class="bg-dark card">
+        <div class="card-body">
+            <img src="https://cdn-icons-png.flaticon.com/128/4140/4140048.png" alt="프로필1">
+            <h5 class="text-light card-title">Special title treatment</h5>
+            <p class="text-light ard-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="bg-dark card">
+        <div class="card-body">
+            <img src="https://cdn-icons-png.flaticon.com/128/4140/4140049.png" alt="프로필2">
+            <h5 class="text-light card-title">Special title treatment</h5>
+            <p class="text-light ard-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="m-5 row">
+        <div class="col-sm-6">
+            <div class="bg-dark card">
+            <div class="card-body">
+                <img src="https://cdn-icons-png.flaticon.com/128/4140/4140051.png" alt="프로필3">
+                <h5 class="text-light card-title">Special title treatment</h5>
+                <p class="text-light card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="bg-dark card">
+            <div class="card-body">
+                <img src="https://cdn-icons-png.flaticon.com/128/4139/4139981.png" alt="프로필4">
+                <h5 class="text-light card-title">Special title treatment</h5>
+                <p class="text-light card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    <div class="m-5 bg-dark  card">
+        <div class=" text-light card-body">
+          This is some text within a card body.
+        </div>
+    </div>
+  
+</body>
+
+
+
+
+
+    <!-- <form action="{% url 'movie:create' %}">
         제목 <input type="text" name="title">
         내용 <input type="text" name="content">
         <input type="submit">
     </form>
 </body>
-</html>
+</html> -->
+
+
+{% endblock %}

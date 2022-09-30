@@ -63,7 +63,7 @@ urlpatterns = [
    #### 4-1. `html` 파일은 `urls.py`를 불러온다
 
 ```html
-<a href="{% url 'movie:new '%}">리뷰 작성</a>
+<a href="{% url 'movie:new' %}">리뷰 작성</a>
 <!-- {% url '[app_name]:[urls.py의 path name] '%} -->
 ```
 

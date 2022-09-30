@@ -1,19 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block  title %}
+  <title>Document</title>
+{% endblock %}
+
+{% block content %}
 
 <body>
+    <p class="m-4 fw-bolder fs-2 text-light">🧐 Do you want to edit your post?</p>
+    <nav class="m-4 navbar bg-dark">
+        <div class="container-fluid">
+            <form class="text-light" action="{% url 'movie:update' review.pk %}">
+                Title <input type="text" name="title" value="{{ review.title }}">
+                Content <input type="text" name="content" value="{{ review.content }}">
+                <button type="submit" class="m-4 btn btn-primary">Completion</button>
+            </form>
+        </div>
+      </nav>
+<!-- 
+    <p class="m-4 fw-bolder fs-2 text-light">Content</p>
+    <nav class="m-4 navbar bg-dark">
+        <div class="container-fluid">
+            <form class="text-light" action="{% url 'movie:update' review.pk %}">
+                Content <input type="text" name="content" value="{{ review.content }}">
+                <button type="submit" class="m-4 btn btn-primary">Completion</button>
+            </form>
+        </div>
+    </nav> -->
+
+    <!-- <button type="submit" class="m-4 btn btn-primary">Completion</button> -->
+
+<!-- 
     <form action="{% url 'movie:update' review.pk %}">
         제목 <input type="text" name="title" value="{{ review.title }}">
         내용 <input type="text" name="content" value="{{ review.content }}">
         <input type="submit">
-    </form>
+    </form> -->
 </body>
 
-</html>
+{% endblock %}
