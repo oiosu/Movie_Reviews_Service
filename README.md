@@ -1,5 +1,50 @@
-# movie-reviews
-## 흐름
+# <div align="center"> 🎬 Netflix movie review service </div>
+
+
+
+![image](https://user-images.githubusercontent.com/99783474/235343764-7a0a19f0-9403-4f53-bd73-19f640d24153.png)
+![image](https://user-images.githubusercontent.com/99783474/235343928-a4a7f164-8b59-4e63-b06e-4882f7eff801.png)
+
+
+---
+
+```bash
+$ python -m venv venv
+```
+
+```bash
+$ source venv/Scripts/activate 
+(venv)
+```
+
+```bash
+$ pip install django==3.2.13
+```
+
+```bash
+$ python.exe -m pip install --upgrade pip
+```
+
+```bash
+$ pip install django==3.2.13
+```
+
+```bash
+$ pip install -r requirements.txt
+```
+
+```bash
+$  django-admin startproject pjt . 
+```
+
+```bash
+$ python manage.py runserver
+```
+
+
+
+---
+
 
 ### 1. 앱 생성
 
